@@ -1,0 +1,571 @@
+/**********************************
+**************公共样式*************
+***********************************/
+.container {
+  width: 640px;
+  height: 1136px;
+  margin: 0 auto;
+}
+.mak {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+.mak .lecturer-box {
+  width: 606px;
+  margin: 0 auto;
+  position: relative;
+  top: 152px;
+  padding-top: 94px;
+}
+.mak .lecturer-box .lecturer-title {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 606px;
+  height: 126px;
+  line-height: 300%;
+  background-image: url(../img/prize-title.png);
+  font-size: 1.944375rem;
+  color: #FFF;
+  text-align: center;
+}
+.mak .lecturer-box .lecturer-content {
+  width: 502px;
+  margin: 0 auto;
+  background-color: #FFF;
+  border: 1px solid #e7221d;
+  border-radius: 6px;
+  padding: 56px 16px 16px 16px;
+}
+.mak .lecturer-box .lecturer-content .lecturer-content-box {
+  text-align: center;
+  width: 100%;
+  height: 540px;
+  background: transparent;
+  background-image: url(../img/lecturer.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+.mak .lecturer-box .lecturer-content .lecturer-content-box .lecturer-content-title {
+  font-size: 2.129375rem;
+  color: #f29600;
+  height: 98px;
+  line-height: 260%;
+}
+.mak .lecturer-box .lecturer-content .lecturer-content-box .lecturer-content-portrait {
+  font-size: 2.25rem;
+  /************CPC*************/
+  /************讲师*************/
+  /************云南十八怪*************/
+}
+.mak .lecturer-box .lecturer-content .lecturer-content-box .lecturer-content-portrait .cpc-txt {
+  font-size: 1.5rem;
+  color: #4c4c4c;
+  text-align: left;
+  padding: 0 29px;
+}
+.mak .lecturer-box .lecturer-content .lecturer-content-box .lecturer-content-portrait .cpc-img {
+  width: 237px;
+  height: 226px;
+  margin: 0 auto;
+  margin-top: 36px;
+}
+.mak .lecturer-box .lecturer-content .lecturer-content-box .lecturer-content-portrait .cpc-img img {
+  width: 100%;
+}
+.mak .lecturer-box .lecturer-content .lecturer-content-box .lecturer-content-portrait .lecturer-img {
+  width: 346px;
+  margin: 0 auto;
+  padding-top: 18px;
+}
+.mak .lecturer-box .lecturer-content .lecturer-content-box .lecturer-content-portrait .lecturer-img img {
+  width: 100%;
+}
+.mak .lecturer-box .lecturer-content .lecturer-content-box .lecturer-content-portrait .blame {
+  width: 366px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+.mak .lecturer-box .lecturer-content .lecturer-content-box .lecturer-content-portrait .blame img {
+  width: 100%;
+}
+.mak .lecturer-box .lecturer-content .lecturer-content-box .lecturer-content-portrait .txt-title {
+  color: #e7221d;
+}
+.mak .lecturer-box .lecturer-content .lecturer-content-box .lecturer-content-portrait .txt-describe {
+  color: #000;
+}
+.content {
+  padding-top: 76px;
+  height: 100%;
+  background: transparent url(../img/shake-movebg.png) no-repeat;
+}
+.content .turntable-title {
+  width: 558px;
+  height: 282px;
+  margin: 0 auto;
+}
+.content .turntable-hand {
+  width: 294px;
+  margin: 0 auto;
+  padding-top: 68px;
+}
+.content .turntable-footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+.content .turntable-footer .footer-img {
+  position: absolute;
+  bottom: 0;
+}
+.content .turntable-footer .turntable-txt-box {
+  position: relative;
+  top: -76px;
+  font-size: 2rem;
+  color: #d31818;
+  text-align: center;
+}
+.content .turntable-footer .turntable-txt-box .ceremony,
+.content .turntable-footer .turntable-txt-box .shake-txt,
+.content .turntable-footer .turntable-txt-box .money {
+  display: inline-block;
+  background: transparent url(../img/ioc.png) no-repeat;
+  margin-bottom: -20px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.content .turntable-footer .turntable-txt-box .ceremony {
+  width: 48px;
+  height: 95px;
+  background-position: -20px -126px;
+}
+.content .turntable-footer .turntable-txt-box .shake-txt {
+  width: 87px;
+  height: 94px;
+  background-position: 0 -28px;
+}
+.content .turntable-footer .turntable-txt-box .money {
+  width: 109px;
+  height: 103px;
+  background-position: right 0;
+}
+.error {
+  display: block;
+  width: 34px;
+  height: 34px;
+  line-height: 34px;
+  border: 1px solid #FFF;
+  text-align: center;
+  border-radius: 17px;
+  position: absolute;
+  right: 55px;
+  top: 63px;
+  font-family: 宋体;
+}
+/**********************************
+**************主体样式*************
+**********************************/
+.public-shake,
+.public-shake-move,
+.public-shake-dinner,
+.public-prize-lecturer,
+.lecturer-title,
+.schedule-panel {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+/************摇一摇首页***********/
+.public-shake {
+  padding: 40px 26px 0 26px;
+  background-image: url(../img/shakebg.png);
+}
+.public-shake .shake-title {
+  text-align: center;
+  margin: 40px 0 18px 0;
+}
+.public-shake .shake-title img {
+  display: inline-block;
+}
+.public-shake .package-box {
+  padding-top: 195px;
+  height: 676px;
+  background: transparent url(../img/reg-package.png) no-repeat;
+  text-align: center;
+}
+.public-shake .package-box .shake-btn {
+  width: 180px;
+  height: 180px;
+  border-radius: 90px;
+  background: transparent;
+  margin: 0 auto;
+  line-height: 180px;
+  margin-bottom: 48px;
+}
+.public-shake .package-box .shake-btn a {
+  display: block;
+  color: #e74e3e;
+  font-size: 2.1875rem;
+  font-weight: bold;
+}
+.public-shake .package-box .shake-txtw {
+  font-size: 1.5rem;
+  color: #FFF;
+}
+.public-shake .package-box .shake-txty {
+  font-size: 1.625rem;
+  color: #ffff00;
+}
+/**********小试身手页面***********/
+.public-shake-move {
+  background-image: url(../img/shake-movebg.png);
+  padding-top: 180px;
+}
+/**********晚宴嗨页面*************/
+.public-shake-dinner {
+  background-image: url(../img/shake-dinnerbg.png);
+  padding-top: 160px;
+}
+/**讲师页面及江南十八怪***********/
+.public-prize-lecturer {
+  background-image: url(../img/lecturerbg.png);
+  padding-top: 154px;
+}
+/************获奖金币*************/
+.money-box {
+  max-width: 618px;
+  height: 777px;
+  margin: 0 auto;
+  background: transparent url(../img/cloud-money.png) no-repeat center center;
+}
+.money-box .moneys {
+  text-align: center;
+  padding-top: 346px;
+  font-size: 4.67125rem;
+  font-weight: bold;
+  color: #ec4d35;
+  margin-bottom: 260px;
+}
+.money-box .money-btn {
+  width: 330px;
+  height: 90px;
+  line-height: 90px;
+  display: block;
+  background-color: #e14538;
+  color: #FFF;
+  font-size: 2.125rem;
+  border-radius: 6px;
+  text-align: center;
+  margin: 0 auto;
+}
+/*********大会日程页面************/
+.schedule {
+  text-align: center;
+  padding-top: 98px;
+}
+.schedule .schedule-panel {
+  padding-top: 1px;
+  width: 443px;
+  height: 848px;
+  margin: 0 auto;
+  background-image: url(../img/schedule-panel.png);
+}
+.schedule .schedule-panel .panel-title {
+  font-size: 1.875rem;
+  color: #FFF;
+  margin-top: 114px;
+}
+.schedule .schedule-panel .explain {
+  font-size: 1.6875rem;
+  color: #fff100;
+  margin-top: 28px;
+  margin-bottom: 92px;
+}
+.schedule .schedule-panel .dates {
+  font-size: 1.05rem;
+  height: 74px;
+  margin-bottom: 13px;
+}
+.schedule .schedule-panel .dates span {
+  float: left;
+}
+.schedule .schedule-panel .dates .theme {
+  font-size: 1.125rem;
+  font-weight: bold;
+  color: #FFF;
+  width: 74px;
+  height: 74px;
+  position: relative;
+  margin-left: 27px;
+}
+.schedule .schedule-panel .dates .theme span {
+  position: absolute;
+  width: 50px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+.schedule .schedule-panel .dates .date {
+  margin-left: 70px;
+  text-align: left;
+  height: 70px;
+  line-height: 400%;
+}
+/**************开场******************/
+.start-containers {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: transparent url(../img/curtains-bg.png) no-repeat;
+  background-size: cover;
+}
+.start-containers .curtain-logo {
+  position: fixed;
+  top: 78px;
+  left: 165px;
+}
+.start-containers .start-box {
+  position: relative;
+  width: 650px;
+  margin: 0 auto;
+}
+.start-containers .start-box .curtain-title {
+  position: absolute;
+  left: 50%;
+  top: 90px;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+.start-containers .start-box .start-package {
+  position: absolute;
+  left: 0;
+  top: 368px;
+}
+.start-containers .start-footer {
+  position: absolute;
+  bottom: 0;
+  height: 276px;
+  width: 100%;
+  background: transparent url(../img/start-footer.png) no-repeat 90% 0;
+}
+/**************幕布******************/
+.containers {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: transparent url(../img/curtain-bg.png) no-repeat;
+  background-size: cover;
+}
+.containers .main {
+  width: 874px;
+  margin: 0 auto;
+  position: relative;
+}
+.containers .main .curtain-logo {
+  position: fixed;
+  top: 63px;
+  left: 88px;
+}
+.containers .main .date-box,
+.containers .main .curtain-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+.containers .main .date-box {
+  height: 590px;
+  top: 0;
+}
+.containers .main .date-box .line {
+  width: 5px;
+  height: 346px;
+  background-color: #ff8c00;
+  margin-left: 118.5px;
+}
+.containers .main .date-box .circular {
+  width: 244px;
+  height: 244px;
+  border-radius: 122px;
+  background-color: #ff8c00;
+  text-align: center;
+  line-height: 224px;
+  color: #FFF;
+  font-size: 7.288125rem;
+  font-weight: bold;
+  box-shadow: -30px 30px 106px #000;
+  -webkit-box-shadow: -30px 30px 106px #000;
+  -moz-box-shadow: -30px 30px 106px #000;
+  -ms-box-shadow: -30px 30px 106px #000;
+  -o-box-shadow: -30px 30px 106px #000;
+}
+.containers .main .curtain-title {
+  top: 80px;
+}
+.containers .main .head_portrait {
+  width: 100%;
+  height: 522px;
+  position: relative;
+  top: 270px;
+}
+.containers .main .head_portrait .head-l,
+.containers .main .head_portrait .head-r {
+  position: absolute;
+  width: 436px;
+  height: 100%;
+}
+.containers .main .head_portrait .head-l {
+  left: 0;
+  top: 0;
+}
+.containers .main .head_portrait .head-l .head {
+  text-align: center;
+  position: absolute;
+}
+.containers .main .head_portrait .head-l .head .head-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #FFF;
+  overflow: hidden;
+  box-shadow: -10px 8px 36px #000;
+  -webkit-box-shadow: -10px 8px 36px #000;
+  -moz-box-shadow: -10px 8px 36px #000;
+  -ms-box-shadow: -10px 8px 36px #000;
+  -o-box-shadow: -10px 8px 36px #000;
+}
+.containers .main .head_portrait .head-l .head .head-img img {
+  width: 100%;
+}
+.containers .main .head_portrait .head-l .head .head-name {
+  color: #FFF;
+  font-size: 0.90125rem;
+}
+.containers .main .head_portrait .head-l .head01 {
+  width: 56px;
+  height: 56px;
+  left: 120px;
+}
+.containers .main .head_portrait .head-l .head02 {
+  width: 54px;
+  height: 54px;
+  left: 250px;
+  top: 30px;
+}
+.containers .main .head_portrait .head-l .head03 {
+  width: 80px;
+  height: 80px;
+  left: 166px;
+  top: 92px;
+}
+.containers .main .head_portrait .head-l .head04 {
+  width: 72px;
+  height: 72px;
+  left: 159px;
+  top: 214px;
+}
+.containers .main .head_portrait .head-l .head05 {
+  width: 70px;
+  height: 70px;
+  left: 58px;
+  top: 239px;
+}
+.containers .main .head_portrait .head-l .head06 {
+  width: 68px;
+  height: 68px;
+  left: 134px;
+  top: 385px;
+}
+.containers .main .head_portrait .head-l .head07 {
+  width: 60px;
+  height: 60px;
+  left: 193px;
+  top: 325px;
+}
+.containers .main .head_portrait .head-l .head08 {
+  width: 60px;
+  height: 60px;
+  left: 283px;
+  top: 311px;
+}
+.containers .main .head_portrait .head-l .head09 {
+  width: 60px;
+  height: 60px;
+  left: 246px;
+  top: 436px;
+}
+.containers .main .head_portrait .head-l .head10 {
+  width: 68px;
+  height: 68px;
+  left: 420px;
+  top: 341px;
+}
+.containers .main .head_portrait .head-r {
+  width: 500px;
+  top: 0;
+  right: -64px;
+}
+.containers .main .head_portrait .head-r h2 {
+  font-size: 1.875rem;
+  color: #f8f79a;
+  text-align: center;
+  margin-left: 150px;
+  margin-top: 30px;
+}
+.containers .main .head_portrait .head-r ul {
+  padding: 20px 0 0 170px;
+}
+.containers .main .head_portrait .head-r ul li {
+  margin-bottom: 22px;
+}
+.containers .main .head_portrait .head-r ul li span {
+  margin-right: 20px;
+}
+.containers .main .head_portrait .head-r ul li .list-num {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #f8f79a;
+}
+.containers .main .head_portrait .head-r ul li .list-img {
+  display: inline-block;
+  width: 58px;
+  height: 58px;
+  overflow: hidden;
+  border-radius: 50%;
+  background-color: red;
+  vertical-align: middle;
+}
+.containers .main .head_portrait .head-r ul li .list-img img {
+  width: 100%;
+}
+.containers .main .head_portrait .head-r ul li .list-name {
+  font-size: 1.125rem;
+  color: #FFF;
+}
+.containers .main .head_portrait .head-r ul li .list-speed {
+  display: inline-block;
+  background-color: #FFF;
+  padding: 9px 0;
+  width: 100px;
+}
+.containers .footer {
+  height: 701px;
+  width: 100%;
+  background: transparent url(../img/curtain-footer.png) no-repeat 60% -20px;
+}

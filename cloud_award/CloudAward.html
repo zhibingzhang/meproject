@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>云奖</title>
+    <link type="text/css" rel="stylesheet" href="css/Initialization.css" />
+    <link type="text/css" rel="stylesheet" href="css/CloudAward.css" />
+    <script src="js/jquery-1.12.4.min.js" type="text/javascript"></script>
+</head>
+<body>
+    <!--音乐  -->
+    <audio id="musicBox" loop="loop" preload="metadata" src="js/luckdraw.mp3">
+        您的浏览器不支持 canvas，赶紧去升级吧
+    </audio>
+    <audio id="awards" loop="loop" preload="metadata" src="js/awards.mp3">
+        您的浏览器不支持 canvas，赶紧去升级吧
+    </audio>
+    <!--弹出层获奖者-->
+    <div id="mak-crown" class="mak-crown">
+        <div class="crown-box">
+            <div class="crown-img">
+                <img src="img/crown.png" alt="this is crown" />
+            </div>
+            <div class="crown-head">
+                <img src="img/head06.jpg" alt="this is head" />
+            </div>
+            <div class="crown-circle">
+                <img src="img/circle.png" alt="this is circle" />
+            </div>
+            <div class="crown-info">
+                <p>Ming Xiao</p>
+                <p>xiaoming@outlook.com</p>
+            </div>
+        </div>
+    </div>
+    <!--获奖确认层-->
+    <div id="mak-confirm" class="mak-confirm">
+        <div class="confirm">
+            <div id="error" class="error">×</div>
+            <p id="tishi">本轮结果将被清空<br />请输入确认码</p>
+            <input id="inp" type="password" class="inp">
+        </div>
+    </div>
+    <div class="container">
+        <div class="logo">
+            <img src="img/logo.png" width="157" height="33" alt="logo" />
+        </div>
+        <div class="turntable">
+            <div id="box" class="box">
+                <div class="box1">
+                    <img src="img/head01.jpg" alt="head01" />
+                </div>
+                <div class="box2">
+                    <img src="img/head02.jpg" alt="head01" />
+                </div>
+                <div class="box3">
+                    <img src="img/head03.jpg" alt="head01" />
+                </div>
+                <div class="box4">
+                    <img src="img/head04.jpg" alt="head01" />
+                </div>
+                <div class="box5">
+                    <img src="img/head05.jpg" alt="head01" />
+                </div>
+                <div class="box6">
+                    <img src="img/head06.jpg" alt="head01" />
+                </div>
+                <div class="box7">
+                    <img src="img/head07.jpg" alt="head01" />
+                </div>
+                <div class="box8">
+                    <img src="img/head08.jpg" alt="head01" />
+                </div>
+            </div>
+            <div class="box-imgs">
+                <div id="lucky-img" class="lucky-img">
+                    <img src="img/lucky.png" alt="head is imgs" />
+                </div>
+                <div class="randomimg-box" id="randomimg-box">
+                    <div class="random-img" id="random-img">
+                        <img src="img/head08.jpg" alt="head is noe" />
+                    </div>
+                    <div class="circle">
+                        <img src="img/circle.png" alt="circle">
+                    </div>
+                </div>
+            </div>
+            <button class="box-btn" id="box-btn" role="button">尚未就绪</button>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var box_btn = document.getElementById("box-btn");
+        var t;
+        var tim;
+        var bool = false;
+        var audio;
+        var awards;
+        //监听回车键事件
+        document.onkeyup =submit;
+        //鼠标点击事件
+        box_btn.addEventListener("click",function(){
+            submit(8);
+        });
+        //页面加载完成
+        window.onload = function(){
+            var arr = [];
+            if(arr.length === 0){
+                document.getElementById("box-btn").innerHTML ="尚未就绪";
+            }else{
+                document.getElementById("box-btn").innerHTML ="准备就绪";
+            }
+        };
+        function submit (event) {
+            var e = event || window.event;
+            var keyCode = e.keyCode || e.which;
+            if(keyCode === 13 || e===8){
+                if(box_btn.innerHTML ==="尚未就绪"){
+                    document.getElementById("box-btn").innerHTML ="确认";
+                    document.getElementById("box-btn").style.right = "128px";
+                    document.getElementById("box-btn").style.bottom = "60px";
+                    document.getElementById("error").style.display = "none";
+                    document.getElementById("tishi").innerHTML ="数据初始化且候选人员<br />会重新放回库中";
+                    document.getElementById("mak-confirm").style.display = 'block';
+                }else if(box_btn.innerHTML ==="准备就绪"){
+                    bool = true;
+                    document.getElementById("box").className = "box ani01";
+                    //音乐
+                    audio = document.getElementById("musicBox");
+                    audio.load();
+                    audio.play();
+                    if(bool){
+                        tim = setInterval(function(){
+                            document.getElementById("box").className = "box ani";
+                            clearInterval(tim);
+                            bool = false;
+                        },1000);
+                    }
+                    document.getElementById("box-btn").innerHTML ="抽奖中";
+                    document.getElementById("lucky-img").style.display = 'none';
+                    document.getElementById("randomimg-box").style.display = 'block';
+                    //中间头像随机变换
+                    t = setInterval(function(){
+                        rotateradom(true);
+                    },100);
+                }else if(box_btn.innerHTML ==="抽奖中"){
+                    audio.pause();
+                    document.getElementById("box").className = "box";
+                    document.getElementById("box-btn").innerHTML ="中奖结果";
+                    clearInterval(t);
+                    document.getElementById("lucky-img").style.display = 'block';
+                    document.getElementById("randomimg-box").style.display = 'none';
+                    document.getElementById("mak-crown").style.display = 'block';
+                    //献花
+                    var count = 0;
+                    xgfa(3);
+                    xgfa(2);
+                    xgfa(4);
+                    var t = setInterval(function(){
+                        count ++;
+                        xgfa(3);
+                        xgfa(2);
+                        xgfa(4);
+                        if(count === 2) clearInterval(t);
+                    },2000);
+                    //音乐
+                    awards = document.getElementById("awards");
+                    awards.load();
+                    awards.play();
+                }else if(box_btn.innerHTML ==="中奖结果"){
+                    awards.pause();
+                    document.getElementById("error").style.display = "block";
+                    document.getElementById("tishi").innerHTML ="本轮结果将被清空<br />请输入确认码";
+
+                    document.getElementById("box-btn").innerHTML ="确认";
+                    document.getElementById("box-btn").style.right = "128px";
+                    document.getElementById("box-btn").style.bottom = "60px";
+                    document.getElementById("mak-confirm").style.display = 'block';
+                    document.getElementById("inp").value ="";
+                    document.getElementById("inp").focus();
+                }else if(box_btn.innerHTML ==="确认"){
+                    document.getElementById("mak-crown").style.display = 'none';
+                    document.getElementById("mak-confirm").style.display = 'none';
+                    document.getElementById("box-btn").innerHTML ="准备就绪";
+                    document.getElementById("box-btn").style.right = "-360px";
+                    document.getElementById("box-btn").style.bottom = "0";
+                }
+            }
+        };
+        //隐藏图层
+        var error_btn = document.getElementById("error");
+        error_btn.addEventListener("click",function(){
+            document.getElementById("mak-confirm").style.display = 'none';
+            document.getElementById("box-btn").innerHTML ="中奖结果";
+            document.getElementById("box-btn").style.right = "-360px";
+            document.getElementById("box-btn").style.bottom = "0";
+        });
+        function rotateradom(){
+            var i = parseInt(Math.random()*8)+1;
+            document.getElementById("random-img").innerHTML ="<img src='img/head0"+i+".jpg'/>";
+        }
+        //礼物
+        var xg = {
+            zan: ["img/zan.png"],
+            hua: ["img/hua.png"],
+            zhang: ["img/zhang.png"],
+            xgnumber: 50,
+            time: 2000
+        };
+        function xgfa(x) {
+            console.log(x);
+            var DataContentWidth = $("#mak-crown").width();
+            var DataContentHeight = $("#mak-crown").height();
+            for(var i = 0; i < xg.xgnumber; i++) {
+                var thisbg = $("<div>").appendTo("#mak-crown").addClass("song").css({
+                    "top": -50,
+                    "left": Math.random() * (DataContentWidth - 60) + 1
+                });
+                if(x == 2) {
+                    thisbg.html('<img src="' + xg.zan[0] + '" />');
+                }
+                if(x == 3) {
+                    thisbg.html('<img src="' + xg.hua[0] + '" />');
+                    console.log(thisbg.html());
+                }
+                if(x == 4) {
+                    thisbg.html('<img src="' + xg.zhang[0] + '" />');
+                }
+                thisbg.animate({
+                    "top": Math.random() * DataContentHeight*1.5 +DataContentHeight*1.2
+                }, Math.random() * 5000 + 4500, function() {
+                    $(this).remove();
+                });
+            };
+        };
+    </script>
+</body>
+</html>

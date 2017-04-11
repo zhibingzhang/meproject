@@ -1,0 +1,356 @@
+/**************公共样式*************/
+.logo {
+  width: 157px;
+  height: 33px;
+  padding: 56px;
+}
+.box-btn {
+  position: absolute;
+  bottom: 0;
+  right: -360px;
+  width: 215px;
+  height: 112px;
+  line-height: 112px;
+  padding-top: 19px;
+  background: transparent url(../img/luckybtn.png) no-repeat left top;
+  color: #c70707;
+  display: block;
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  z-index: 99999;
+}
+.ani {
+  animation: box .3s linear infinite;
+  -webkit-animation: box .3s linear infinite;
+  -moz-animation: box .3s linear infinite;
+  -ms-animation: box .3s linear infinite;
+  -o-animation: box .3s linear infinite;
+}
+.ani01 {
+  animation: box01 1s ease-in;
+  -webkit-animation: box01 1s ease-in;
+  -moz-animation: box01 1s ease-in;
+  -ms-animation: box01 1s ease-in;
+  -o-animation: box01 1s ease-in;
+}
+@keyframes box {
+  from {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes box01 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(600deg);
+  }
+}
+.box-imgs {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  padding: 5px;
+}
+.box-imgs .randomimg-box {
+  display: none;
+  position: relative;
+  width: 230px;
+  height: 230px;
+}
+.box-imgs .randomimg-box .random-img {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  margin-left: -90px;
+  margin-top: -90px;
+}
+.box-imgs .randomimg-box .random-img img {
+  width: 100%;
+}
+.box-imgs .randomimg-box .circle {
+  position: absolute;
+}
+.box-imgs .randomimg-box .circle img {
+  width: 100%;
+}
+.song {
+  position: fixed;
+  z-index: 9999;
+}
+/**************云奖页面样式*************/
+.container {
+  height: 100%;
+  background: transparent url(../img/cloudawardbg.png) no-repeat center center;
+  background-size: cover;
+}
+.turntable {
+  width: 478px;
+  height: 478px;
+  background: transparent url(../img/turntable.png) no-repeat center center;
+  background-size: cover;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -239px;
+  margin-top: -239px;
+}
+.turntable .box {
+  border-radius: 250px;
+  position: relative;
+  width: 478px;
+  height: 478px;
+  margin: 0 auto;
+}
+.turntable .box div {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: 0 0 15px #000;
+  overflow: hidden;
+}
+.turntable .box div img {
+  transform: scale(0.5, 0.5);
+  -webkit-transform: scale(0.5, 0.5);
+  -moz-transform: scale(0.5, 0.5);
+  -ms-transform: scale(0.5, 0.5);
+  -o-transform: scale(0.5, 0.5);
+  transform-origin: 0% 0%;
+  -webkit-transform-origin: 0% 0%;
+  -moz-transform-origin: 0% 0%;
+  -ms-transform-origin: 0% 0%;
+  -o-transform-origin: 0% 0%;
+}
+.turntable .box .box1 {
+  background-color: #007aff;
+}
+.turntable .box .box2 {
+  background-color: #80F4CA;
+  bottom: 0;
+  right: 0;
+}
+.turntable .box .box3 {
+  background-color: #452606;
+  bottom: 0;
+}
+.turntable .box .box4 {
+  background-color: #666666;
+  right: 200px;
+  top: -76px;
+}
+.turntable .box .box5 {
+  background-color: #BDBDBD;
+  right: -76px;
+  top: 200px;
+}
+.turntable .box .box6 {
+  background-color: #E47BEB;
+  top: 200px;
+  left: -76px;
+}
+.turntable .box .box7 {
+  background-color: blue;
+  right: 0;
+}
+.turntable .box .box8 {
+  background-color: forestgreen;
+  bottom: -76px;
+  left: 200px;
+}
+/**************弹出层获奖者*************/
+.mak-crown {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 999;
+}
+.mak-crown .crown-box {
+  position: absolute;
+  width: 340px;
+  height: 480px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+.mak-crown .crown-box .crown-img,
+.mak-crown .crown-box .crown-head,
+.mak-crown .crown-box .crown-circle,
+.mak-crown .crown-box .crown-info {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+.mak-crown .crown-box .crown-img {
+  top: 0;
+}
+.mak-crown .crown-box .crown-head {
+  top: 142px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.mak-crown .crown-box .crown-head img {
+  width: 100%;
+}
+.mak-crown .crown-box .crown-circle {
+  top: 110px;
+  width: 270px;
+  height: 270px;
+}
+.mak-crown .crown-box .crown-circle img {
+  width: 100%;
+}
+.mak-crown .crown-box .crown-info {
+  bottom: 0;
+  text-align: center;
+  font-size: 1.75rem;
+  color: #FFF;
+}
+/**************弹出层获奖者*************/
+.mak-confirm {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 999;
+}
+.mak-confirm .error {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 36px;
+  height: 36px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 50%;
+  border: 1px solid #000;
+  font-size: 2.25rem;
+  color: #000;
+  cursor: pointer;
+}
+.mak-confirm .confirm {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 462px;
+  height: 462px;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  background-color: #FFF;
+  border-radius: 6px;
+  box-shadow: 0 0 30px #eee;
+  padding: 30px 56px 0 56px;
+}
+.mak-confirm .confirm p {
+  text-align: center;
+  font-size: 2.125rem;
+  color: #363636;
+  margin-bottom: 28px;
+}
+.mak-confirm .confirm .inp {
+  border: 1px solid #a0a0a0;
+  width: 100%;
+  height: 106px;
+  font-size: 2.25rem;
+  color: #363636;
+  text-align: center;
+}
+.login-mak {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100%;
+}
+.login-mak .login-box {
+  width: 546px;
+  height: 390px;
+  background-color: #FFF;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 6px;
+  margin-left: -273px;
+  margin-top: -195px;
+  padding: 50px;
+}
+.login-mak .login-box .group {
+  height: 56px;
+  margin-bottom: 20px;
+}
+.login-mak .login-box .group span {
+  float: left;
+  width: 56px;
+  height: 56px;
+  background: transparent url(../img/login-ioc.png) no-repeat;
+}
+.login-mak .login-box .group .head-user {
+  background-position: left top;
+}
+.login-mak .login-box .group .head-pwd {
+  background-position: left -72px;
+}
+.login-mak .login-box .group input {
+  float: right;
+  width: 380px;
+  height: 56px;
+  border: 1px solid #ccc;
+  font-size: 2.125rem;
+  padding-left: 10px;
+  color: #ccc;
+}
+.login-mak .login-box .login-submit {
+  display: block;
+  width: 180px;
+  height: 76px;
+  line-height: 76px;
+  background: transparent url(../img/login-ioc.png) no-repeat;
+  background-position: right bottom;
+  margin: 0 auto;
+  font-size: 1.75rem;
+  font-weight: bold;
+  text-align: center;
+  color: #c70707;
+  margin-top: 66px;
+  cursor: pointer;
+}
