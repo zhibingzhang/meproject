@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src='js/jquery-1.12.4.min.js'></script>
+</head>
+<body>
+	<script type="text/javascript">
+		$.ajax({
+		    url: "http://server.w-share.cn/WebsiteServlet?action=shopUserlogin&uuid=manager&upassword=123456",
+		    dataType: 'jsonp',
+		    type: 'get',
+		    jsonp: 'jsonpcallback',
+		    success: function(data) {
+		        console.log(data)
+		        
+		    }
+		});
+	</script>
+</body>
+</html>
