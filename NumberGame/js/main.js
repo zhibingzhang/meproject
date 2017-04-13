@@ -310,12 +310,12 @@ function timer() {
         if (NumberGame.count == 1) {
             var when_long =compile(parseInt(sum / 60) * 60 + sum % 60 + ',' + str);
             console.log(when_long)
-            window.location.href = 'GameResult.html?when_long=' + when_long;
+            window.location.href = 'http://dwz.cn/5K8abW?when_long=' + when_long;
         }
         if (sum == 0) {
             clearInterval(t);
             var type = compile('false,'+str);
-            window.location.href = 'GameResult.html?when_long=' + type;
+            window.location.href = 'http://dwz.cn/5K8abW?when_long=' + type;
         }
         sum--;
     }, 1000);
