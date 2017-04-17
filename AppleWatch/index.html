@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+    <meta http-equiv="expires" content="0">
+    <meta name="keywords" content="Apple 教育优惠更近一步">
+    <meta name="description" content="Apple 教育优惠更近一步">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="pragram" content="no-cache">
+    <meta name="sharecontent" data-msg-img="" data-msg-title="" data-msg-content="" data-msg-callback=""
+          data-line-img="" data-line-title="" data-line-callback="">
+
+    <title>Apple 教育优惠更近一步</title>
+    <link href="css/swiper-3.3.1.min.css" type="text/css" rel="stylesheet">
+    <link href="css/animate.min.css" type="text/css" rel="stylesheet">
+    <link href="css/load.css" type="text/css" rel="stylesheet">
+    <link href="css/main.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script>
+        $.ajax({
+            url: "http://event.anruichina.com/wechat/token",
+            dataType: 'jsonp',
+            data: {url: window.location.href},
+            jsonp: 'jsonpcallback',
+            success: function (data) {
+                try {
+                    var wxConfig = eval(data);
+                    wx.config(wxConfig);
+                } catch (e) {
+                    alert(e.message);
+                }
+            }
+        });
+    </script>
+    <script src="js/wxshare-v2.0.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        if (/Android (\d+\.\d+)/.test(navigator.userAgent)) {
+            var version = parseFloat(RegExp.$1);
+            if (version > 2.3) {
+                var phoneScale = parseInt(window.screen.width) / 640;
+                document.write('<meta name="viewport" content="width=640, minimum-scale = ' + phoneScale + ', maximum-scale = ' + phoneScale + ', target-densitydpi=device-dpi">');
+            } else {
+                document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+            }
+        } else {
+            document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+        }
+        //微信去掉下方刷新栏
+        if (navigator.userAgent.indexOf('MicroMessenger') >= 0) {
+            document.addEventListener('WeixinJSBridgeReady', function () {
+                //WeixinJSBridge.call('hideToolbar');
+            });
+        }
+    </script>
+</head>
+<body>
+<div class="load">
+    <ul>
+        <li class="top"></li>
+        <li class="rigth"></li>
+        <li class="bottom"></li>
+        <li class="left"></li>
+    </ul>
+</div>
+<div id="mask-notwinning" class="masklayer" swiper-animate-effect="fadeIn" swiper-animate-duration="1s">
+    <div class="guide">
+        <img src="images/guide.png" alt="guide" width="100%" height="100%">
+    </div>
+</div>
+<div class="rompt-box">
+    <div class="rompt">
+        <div class="rompt-header">
+            您今天的抽奖机会已用完，请明天再来。
+        </div>
+        <div class="rompt-btn">
+            确定
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide welcome-page" data-hash="home">
+                <p class="caption ani" swiper-animate-effect="zoomInDown" swiper-animate-duration="0.6s">
+                    <img src="images/welcome-title.png" alt="welcome-title">
+                </p>
+                <div class="surfaces">
+                    <div class="ani" swiper-animate-effect="zoomInDown" swiper-animate-duration="0.6s" swiper-animate-delay="0.2s">
+                        <img class="sur sur_blue" src="images/surface_blue.png" alt="surface_blue">
+                    </div>
+                    <div class="ani" swiper-animate-effect="zoomInDown" swiper-animate-duration="0.6s" swiper-animate-delay="0.4s">
+                        <img class="sur sur_red"  src="images/surface_red.png" alt="surface_red">
+                    </div>
+                    <div class="ani" swiper-animate-effect="zoomInDown" swiper-animate-duration="0.6s" swiper-animate-delay="0.6s">
+                        <img class="sur sur_white" src="images/surface_white.png" alt="surface_white">
+                    </div>
+                </div>
+                <p class="pleasantly-surprised">惊喜升级</p>
+                <div class="direction ani" swiper-animate-effect="slideInDown" swiper-animate-duration="0.8s" swiper-animate-delay="0.8s">
+                    <img src="images/direction.png" alt="direction" width="35" height="56">
+                </div>
+                <p class="date">2016.7.24-9.17</p>
+                <p class="shake">摇取 Apple Watch Spotr<br />天天有机会</p>
+                <a id="" class="me_btn swiper-button-next pitch" role="button">我要参加</a>
+            </div>
+            <div class="swiper-slide prize-draw-page" data-hash="shake">
+                <div class="apple-watch-page">
+                    <p class="caption ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.6s">
+                        <img src="images/prize-title.png" alt="prize-title">
+                    </p>
+                    <div class="prize-box ani" swiper-animate-effect="wobble" swiper-animate-duration="0.8s" swiper-animate-delay="0.4s">
+                        <img class="mak" src="images/prize.png" alt="prize is mak">
+                    </div>
+                    <p class="shake-txt">摇一摇</p>
+                    <div class="prize-panel">
+                        <div class="panel-header clear">
+                            <div class="fl">
+                                <p><i class="heart"></i>获奖榜单</p>
+                            </div>
+                            <div class="fr">
+                                <p><a href="info.html">中奖查询<i class="arrow-r"></i></a></p>
+                            </div>
+                        </div>
+                        <div class="panel-content" id="lists">
+                            <div class="dome1" id="list-item">
+                                <p class="clear"><span class="date-y-m-s">2016-08-01</span><span class="winning-info">微信昵称</span><span class="phone">红包金额</span></p>
+                                <p class="clear"><span class="date-y-m-s">2016-08-02</span><span class="winning-info">微信昵称</span><span class="phone">红包金额</span></p>
+                                <p class="clear"><span class="date-y-m-s">2016-08-03</span><span class="winning-info">Free Json</span><span class="phone">￥56/元</span></p>
+                                <p class="clear"><span class="date-y-m-s">2016-08-04</span><span class="winning-info">微信昵称</span><span class="phone">红包金额</span></p>
+                                <p class="clear"><span class="date-y-m-s">2016-08-01</span><span class="winning-info">微信昵称</span><span class="phone">红包金额</span></p>
+                            </div>
+                            <div class="dome2" id="list-copy"></div>
+                        </div>
+                        <p class="privacy">
+                            <a id="privacy-btn" role="button" href="PrivacyNote.html">隐私说明</a>
+                        </p>
+                    </div>
+                    <a id="claim" class="me_btn swiper-button-next" role="button">活动规则</a>
+                </div>
+                <div class="winning-page ani" swiper-animate-effect="fadeIn" swiper-animate-duration="1s">
+                    <p class="caption ani" swiper-animate-effect="bounceIn" swiper-animate-duration="0.8s" swiper-animate-delay="0.8s">
+                        <img src="images/winning-title.png" alt="winning is title">
+                    </p>
+                    <div class="surprise ani" swiper-animate-effect="rotateIn" swiper-animate-duration="0.8s" swiper-animate-delay="1s">
+                        <img src="images/surprise.png" alt="surprise">
+                    </div>
+                    <div class="gift">
+                        <div class="gift-gloup gloup-blue ani" swiper-animate-effect="zoomInDown" swiper-animate-duration="0.6s" swiper-animate-delay="1.2s">
+                            <img class="gift_blue" src="images/surface_blue.png" alt="gift color blue">
+                            <span class="gifts-bg"></span>
+                        </div>
+                        <div class="gift-gloup gloup-red ani" swiper-animate-effect="zoomInDown" swiper-animate-duration="0.6s" swiper-animate-delay="1.4s">
+                            <img class="gift_red" src="images/surface_red.png" alt="gift color red">
+                            <span class="gifts-bg"></span>
+                        </div>
+                        <div class="gift-gloup gloup-white ani" swiper-animate-effect="zoomInDown" swiper-animate-duration="0.6s" swiper-animate-delay="1.6s">
+                            <img class="gift_red" src="images/surface_white.png" alt="gift color white">
+                            <span class="gifts-bg"></span>
+                        </div>
+                    </div>
+                    <a class="me_btn swiper-button-next" href="#" role="button">填写信息</a>
+                </div>
+                <div class="notwinning ani" swiper-animate-effect="fadeIn" swiper-animate-duration="1s">
+                    <div class="sorry-ioc ani" swiper-animate-effect="flipInY" swiper-animate-duration="1s" swiper-animate-delay="1s">
+                        <img src="images/personal-ioc.png" alt="sorry-ioc">
+                    </div>
+                    <p class="sorry-txt">很遗憾，未摇中奖品！</p>
+                    <p class="matching">长按识别二维码关注 Mac4MeWorld<br />获取<span style="font-size:32px">天天</span>抽取 Apple Watch 的机会</p>
+                    <div class="caption">
+                        <div class="bg-img">
+                            <img src="images/personal-code.jpg" alt="personal-code" width="243" height="243">
+                        </div>
+                    </div>
+                    <p class="world-txt">Mac4MeWorld 二维码</p>
+                    <a class="me_btn" role="button" id="notwinning-share">转发给小伙伴一次中奖机会</a>
+                </div>
+            </div>
+            <div class="swiper-slide activity-rule-page" data-hash="slide2">
+                    <p class="caption ani" swiper-animate-effect="flipInY" swiper-animate-duration="1s">活动规则</p>
+                    <div class="rule-content">
+                        <p class="cont-txt">即日起，全国在校大学生在苹果授权渠道经销商门店购买符合教育优惠价格的 Mac 和 iPad 产品，即可享受教育优惠。为庆祝此项优惠政策的全面实施，Mac4MeWorld 微信公众账号特面向广大用户举办大力度抽奖活动，赢取 Apple Watch Sport 每日不停歇!</p>
+                        <p><span class="activity-title">活动时间：</span>2016年7月24日- 9月17日</p>
+                        <p><span class="activity-title">活动范围：</span>本活动仅限中国大陆境内人员参与</p>
+                        <p><span class="activity-title">活动奖品：</span>Apple Watch Sport 运动版</p>
+                        <p><span class="activity-title">活动规则：</span></p>
+                        <ul>
+                            <li>
+                                <p>活动期间，进入活动抽奖页面，晃动手机摇一摇进行抽奖。</p>
+                            </li>
+                            <li>
+                                <p>每天将有1名参与活动的用户获得 Apple Watch Sport 。</p>
+                            </li>
+                            <li>
+                                <p>每个用户每天有1次抽奖机会。</p>
+                            </li>
+                            <li>
+                                <p>活动期间，当日活动的中奖名单将于次日公布在活动抽奖页面。用户进入抽奖页面即可看到所有中奖名单。</p>
+                            </li>
+                            <li>
+                                <p>活动奖品将于活动结束后10个工作日内通过快递寄送给获奖用户。在此期间，请保持电话畅通，如无法联系到获奖用户，则视为自动放弃奖品。</p>
+                            </li>
+                        </ul>
+                        <div class="rule-footer">
+                            <p>＊本活动最终解释权归 <strong>Mac4MeWorld</strong> 微信公众账号所有</p>
+                            <p>如有疑问，敬请联系: <strong>Mac4Me@anruichina.com</strong></p>
+                        </div>
+                    </div>
+                    <a class="me_btn swiper-button-prev" role="button">返回</a>
+            </div>
+            <div class="swiper-slide form-page">
+                <div class="fms">
+                    <p class="caption-txt">请填写您的真实信息<br />活动组将根据如下信息为您寄送<br />Apple Watch Sport</p>
+                    <form id="userDataForm" class="fm" action="#" method="post">
+                        <input class="mobile" type="text" required  placeholder="请输入手机号" />
+                        <input class="username" type="text" required  placeholder="请输入姓名" />
+                        <input class="cardId" type="text" required  placeholder="请输入身份证号" />
+                        <input class="mail" type="text" required  placeholder="请输入邮箱" />
+                        <input class="address" type="text" required placeholder="请输入详细地址" />
+                        <input id="userDataSubmit" type="submit" class="submit" value="速度提交" />
+                    </form>
+                </div>
+                <div class="succeed">
+                    <div class="succeed-ioc">
+                        <img src="images/succeed-ioc.png" alt="succeed-ioc">
+                    </div>
+                    <p class="succeed-txt">信息已成功提交！</p>
+                    <p class="succeed-pair">奖品将在活动结束后统一送达<br />请保持手机通畅<br />并确保已关注 Mac4MeWorld 公众号</p>
+                    <div class="caption">
+                        <div class="bg-img">
+                            <img src="images/personal-code.jpg" alt="personal-code" width="243" height="243">
+                        </div>
+                    </div>
+                    <p class="world-txt">长按识别二维码关注 Mac4MeWorld<br />获得<span style="font-size: 2.3rem; font-weight: bold;">天天</span>抽取 Apple Watch 的机会</p>
+                    <a class="me_btn" role="button" id="succeed-btn"><span style="font-weight: bold;">转发</span> 给小伙伴一次中奖机会</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="js/swiper-3.3.1.jquery.min.js"></script>
+<script type="text/javascript" src="js/swiper.animate1.0.2.min.js"></script>
+<script src="js/main.js" type="text/javascript"></script>
+<script type="text/javascript">
+    (function () {
+        document.onreadystatechange = loading;
+        function loading() {
+            if (document.readyState == "complete") {
+                $(".load").hide();
+                $(".container").show();
+                var mySwiper = new Swiper('.swiper-container', {
+                    speed: 1000,
+                    direction: 'vertical',
+                    loop: false,
+                    onlyExternal: true,
+                    hashnav:true,
+                    prevButton:'.swiper-button-prev',
+                    nextButton:'.swiper-button-next',
+                    onSlideChangeStart:function(swiper){
+                        if(swiper.activeIndex === 1){
+                            wx_shake.init();
+                            if($("#list-item p").length > 4)scroll_event.init();
+                        }
+                    },
+                    onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
+                        swiperAnimateCache(swiper); //隐藏动画元素
+                        swiperAnimate(swiper); //初始化完成开始动画
+                    },
+                    onSlideChangeEnd: function(swiper){
+                        swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+                    }
+                });
+            }
+        }
+    })();
+</script>
+</body>
+</html>

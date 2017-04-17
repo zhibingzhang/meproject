@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+    <meta http-equiv="expires" content="0">
+    <meta name="keywords" content="Apple 教育优惠更近一步">
+    <meta name="description" content="Apple 教育优惠更近一步">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="pragram" content="no-cache">
+    <meta name="sharecontent" data-msg-img="" data-msg-title="" data-msg-content="" data-msg-callback=""
+          data-line-img="" data-line-title="" data-line-callback="">
+
+    <title>Apple 教育优惠更近一步</title>
+    <link href="css/swiper-3.3.1.min.css" type="text/css" rel="stylesheet">
+    <link href="css/animate.min.css" type="text/css" rel="stylesheet">
+    <link href="css/load.css" type="text/css" rel="stylesheet">
+    <link href="css/main.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script>
+        $.ajax({
+            url: "http://event.anruichina.com/wechat/token",
+            dataType: 'jsonp',
+            data: {url: window.location.href},
+            jsonp: 'jsonpcallback',
+            success: function (data) {
+                try {
+                    var wxConfig = eval(data);
+                    wx.config(wxConfig);
+                } catch (e) {
+                    alert(e.message);
+                }
+            }
+        });
+    </script>
+    <script src="js/wxshare-v2.0.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        if (/Android (\d+\.\d+)/.test(navigator.userAgent)) {
+            var version = parseFloat(RegExp.$1);
+            if (version > 2.3) {
+                var phoneScale = parseInt(window.screen.width) / 640;
+                document.write('<meta name="viewport" content="width=640, minimum-scale = ' + phoneScale + ', maximum-scale = ' + phoneScale + ', target-densitydpi=device-dpi">');
+            } else {
+                document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+            }
+        } else {
+            document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+        }
+        //微信去掉下方刷新栏
+        if (navigator.userAgent.indexOf('MicroMessenger') >= 0) {
+            document.addEventListener('WeixinJSBridgeReady', function () {
+                //WeixinJSBridge.call('hideToolbar');
+            });
+        }
+    </script>
+</head>
+<body>
+<div class="load">
+    <ul>
+        <li class="top"></li>
+        <li class="rigth"></li>
+        <li class="bottom"></li>
+        <li class="left"></li>
+    </ul>
+</div>
+<div class="container">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="privacy-rules-box">
+                    <p class="caption ani" swiper-animate-effect="flipInY" swiper-animate-duration="1s">隐私政策</p>
+                    <div class="privacy-rules-content">
+                        <p>Mac4MeWorld 重视用户的隐私，隐私权是您重要的权利。</p>
+                        <p>您在参与我们的活动时，我们可能会收集和使用您的相关信息，除非经您允许，否则您的信息绝不会被分享出去。</p>
+                        <p>我们希望通过本《隐私政策》向您说明，在使用我们提供的服务时，我们会收集、使用和储存这些信息。如果您继续参与我们提供的服务，即意味着您同意我们的《隐私政策》中收集、使用和储存您的相关信息的条款。</p>
+                        <p>如对本《隐私政策》或相关事宜有任何问题，请通过 Mac4Me@anruichina.com 与我们联系，谢谢。</p>
+                    </div>
+                    <a class="me_btn privacy-note-btn" role="button">返回</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="js/swiper-3.3.1.jquery.min.js"></script>
+<script type="text/javascript" src="js/swiper.animate1.0.2.min.js"></script>
+<script type="text/javascript">
+    var mySwiper = new Swiper('.swiper-container', {
+        speed: 1000,
+        direction: 'vertical',
+        loop: false,
+        onlyExternal: true,
+        prevButton:'.swiper-button-prev',
+        nextButton:'.swiper-button-next',
+        onSlideChangeStart:function(swiper){
+            if(swiper.activeIndex === 1){
+                wx_shake.init();
+                if($("#list-item p").length > 4)scroll_event.init();
+            }
+        },
+        onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
+            //swiperAnimateCache(swiper); //隐藏动画元素
+            swiperAnimate(swiper); //初始化完成开始动画
+        },
+        onSlideChangeEnd: function(swiper){
+            swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+        }
+    });
+</script>
+<script src="js/main.js" type="text/javascript"></script>
+<script type="text/javascript">
+    (function () {
+        document.onreadystatechange = loading;
+        function loading() {
+            if (document.readyState == "complete") {
+                $(".load").hide();
+                $(".container").show();
+            }
+        }
+    })();
+</script>
+</body>
+</html>
