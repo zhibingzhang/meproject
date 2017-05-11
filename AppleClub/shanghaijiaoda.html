@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+    <meta http-equiv="expires" content="0">
+    <meta name="keywords" content="Apple-ios-Club">
+    <meta name="description" content="Apple-ios-Club">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="pragram" content="no-cache">
+    <meta name="sharecontent" data-msg-img="" data-msg-title="" data-msg-content="" data-msg-callback=""
+    data-line-img="" data-line-title="" data-line-callback="">
+    <title>Apple-iOS-Club</title>
+    <link href="css/swiper-3.4.1.min.css" type="text/css" rel="stylesheet"/>
+    <link href="css/animate.css" type="text/css" rel="stylesheet"/>
+    <link href="css/Reset.css" type="text/css" rel="stylesheet"/>
+    <link href="css/load.css" type="text/css" rel="stylesheet"/>
+    <link href="css/main.css" type="text/css" rel="stylesheet"/>
+    <link href="css/lindex.css" type="text/css" rel="stylesheet"/>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/wxshare-v2.0.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <div class="load">
+      <ul>
+        <li class="top"></li>
+        <li class="rigth"></li>
+        <li class="bottom"></li>
+        <li class="left"></li>
+      </ul>
+    </div>
+    <!-- <p class="arrow">
+        <img src="images/arrow.png" alt="" />
+    </p> -->
+    <div class="container agriculture-box">
+      <div class="agriculture">
+        <div class="agriculture-info">
+          <div class="agriculture-info-img" style="background-color: #FFF;">
+            <img src="images/shanghaijiaoda/shjd_logo.png" style="width: 136px;" />
+          </div>
+          <h3>上海交通大学</h3>
+          <div class="agriculture-info-txt">上海交通大学 Apple 俱乐部（SJTU 果 FAN 儿）致力于让交大同学更了解 Apple 产品与信息，为广大果粉提供一个开放的平台。&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          </div>
+        </div>
+        <p class="arrow-f"><img src="images/arrow-f.png"></p>
+        <div class="codegroup">
+          <p class="shjd-code"><img src="images/shanghaijiaoda/shjd_code.png"></p>
+          <span>上海交通大学 Club</span>
+        </div>
+        <div class="agriculture-imgs">
+          <!-- <div>
+            <img src="images/shanghaijiaoda/shjd_f1.png">
+          </div>
+          <div>
+            <img src="images/shanghaijiaoda/shjd_f2.png">
+          </div>
+          <div>
+            <img src="images/shanghaijiaoda/shjd_f3.png">
+          </div> -->
+        </div>
+        <ul class="lists">
+          <li>
+            <a href="http://mp.weixin.qq.com/s/ookb5_JPDSwmXF3T_1TSKw">
+              <span>移动应用创新赛学生沙龙：就在今天！<br/>2017年4月26日</span>
+              <img src="images/shanghaijiaoda/item1.png" />
+            </a>
+          </li>
+          <li>
+            <a href="http://mp.weixin.qq.com/s/kRp0l0ehKn2XLPLS7RUDjQ">
+              <span>四月就快结束啦！最后的活动和优惠还在等你来！<br/>2017年4月23日</span>
+              <img src="images/shanghaijiaoda/item2.png" />
+            </a>
+          </li>
+          <li>
+            <a href="http://mp.weixin.qq.com/s/H1LsQ5I3l7kp5-SmgW5Psw">
+              <span>动应用创新赛学生沙龙：上海站——就等你来！<br/>2017年4月19日</span>
+              <img src="images/shanghaijiaoda/item3.png" />
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="codegroup">
+        <p class="mac"><img src="images/mac.png"></p>
+        <span>Mac4meworld</span>
+      </div> 
+    </div>
+    <script type="text/javascript" src="js/swiper-3.4.1.jquery.min.js"></script>
+    <script type="text/javascript" src="js/swiper.animate1.0.2.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript">
+      var title = $('.agriculture-info h3').html();
+      var desc = $('.agriculture-info-txt').html();
+      var link = window.location.href;
+      var imgUrl = $('.agriculture-info-img img').attr('src');
+      // 接口调用
+      wx.ready(function() {
+          function getShareData(shareType) {
+              return shareData = {
+                  title: title,
+                  desc: desc,
+                  link: link,
+                  imgUrl: 'http://eventhub01.anruichina.com/AppleClub/'+imgUrl,
+                  success: function(res) {
+                      shareConfirm(shareType);
+                  },
+                  cancel: function(res) {
+                      shareCancel(shareType);
+                  },
+                  fail: function(res) {
+                      shareFail(shareType);
+                  }
+              };
+          }
+
+          function shareCancel(type) {
+
+          }
+
+          function shareFail(type) {
+
+          }
+          // 分享成功
+          function shareConfirm(type) {
+              // $.ajax({
+              //     url: "http://eventhub04.anruichina.com/o365-puzzles/home/ShareFriend",
+              //     type: 'post',
+              //     datatype: 'json',
+              //     data: {
+              //         shareType: type, url: window.location.href
+              //     },
+              //     success: function(data) {
+              //         console.log(data);
+              //         // config.leftCount = data.Status;
+              //         // if (data.Status > 0) {
+              //         //     location.reload();
+              //         // }
+              //     }
+              // });
+          }
+          wx.onMenuShareAppMessage(getShareData(1));
+          wx.onMenuShareTimeline(getShareData(2));
+          wx.onMenuShareQQ(getShareData(3));
+      });
+    </script>
+  </body>
+</html>

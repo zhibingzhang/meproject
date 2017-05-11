@@ -1,0 +1,25 @@
+{
+  "name": "68chicken",
+  "version": "1.0.0",
+  "description": "my name is 68chicken",
+  "main": "app.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhibingzhang/meproject.git"
+  },
+  "keywords": [
+    "chicken"
+  ],
+  "author": "zhibinzhang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhibingzhang/meproject/issues"
+  },
+  "homepage": "https://github.com/zhibingzhang/meproject#readme",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}

@@ -79,5 +79,60 @@
     <script type="text/javascript" src="js/swiper-3.4.1.jquery.min.js"></script>
     <script type="text/javascript" src="js/swiper.animate1.0.2.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript">
+      var title = $('.agriculture-info h3').html();
+      var desc = $('.agriculture-info-txt').html();
+      var link = window.location.href;
+      var imgUrl = $('.agriculture-info-img img').attr('src');
+      // 接口调用
+      wx.ready(function() {
+          function getShareData(shareType) {
+              return shareData = {
+                  title: title,
+                  desc: desc,
+                  link: link,
+                  imgUrl: 'http://eventhub01.anruichina.com/AppleClub/'+imgUrl,
+                  success: function(res) {
+                      shareConfirm(shareType);
+                  },
+                  cancel: function(res) {
+                      shareCancel(shareType);
+                  },
+                  fail: function(res) {
+                      shareFail(shareType);
+                  }
+              };
+          }
+
+          function shareCancel(type) {
+
+          }
+
+          function shareFail(type) {
+
+          }
+          // 分享成功
+          function shareConfirm(type) {
+              // $.ajax({
+              //     url: "http://eventhub04.anruichina.com/o365-puzzles/home/ShareFriend",
+              //     type: 'post',
+              //     datatype: 'json',
+              //     data: {
+              //         shareType: type, url: window.location.href
+              //     },
+              //     success: function(data) {
+              //         console.log(data);
+              //         // config.leftCount = data.Status;
+              //         // if (data.Status > 0) {
+              //         //     location.reload();
+              //         // }
+              //     }
+              // });
+          }
+          wx.onMenuShareAppMessage(getShareData(1));
+          wx.onMenuShareTimeline(getShareData(2));
+          wx.onMenuShareQQ(getShareData(3));
+      });
+    </script>
   </body>
 </html>
